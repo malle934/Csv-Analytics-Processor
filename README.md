@@ -5,16 +5,16 @@ This project is a serverless data pipeline built on AWS that automatically proce
 
 ---
 
-## 🏗️ Architecture Diagram
 
 ## 🏗️ Architecture Diagram
+
+## Architecture Diagram
 
 ```mermaid
 flowchart TD
     A[Upload CSV] --> B[S3 Bucket raw]
     B --> C[Lambda Trigger]
     C --> D[Python Processing]
-
     D --> E[Processed CSV]
     D --> F[Summary JSON]
     D --> G[HTML Charts]
