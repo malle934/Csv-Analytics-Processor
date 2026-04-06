@@ -40,7 +40,7 @@ Outputs stored in S3:
 
 - AWS S3 (Storage)
 - AWS Lambda (Compute)
-- ### ⚙️ Lambda Configuration
+  ⚙️ Lambda Configuration
 | Setting | Value |
 |---|---|
 | Runtime | Python 3.12 |
@@ -77,8 +77,8 @@ Outputs stored in S3:
 
 ## 📸 Screenshots (Optional)
 
-![Architecture](architecture.png)
-![Output](output.png)
+![Sales by Date](salesbydate.png)
+![Sales by Produvt](salesbyproduct.png)
 
 ---
 
