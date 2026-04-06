@@ -1,103 +1,121 @@
-
 # 🚀 Serverless CSV Analytics Pipeline (AWS)
 
-## 📌 Overview
-This project is a serverless data pipeline built on AWS that automatically processes CSV files uploaded to Amazon S3. The system cleans the data, calculates key business metrics, and generates interactive HTML charts.
+## 📌 Project Overview
+This project demonstrates a **serverless data analytics pipeline** using AWS. When a CSV file is uploaded to Amazon S3, AWS Lambda is automatically triggered to process the data, generate insights, and create interactive HTML charts.
+
+This project highlights real-world **ETL processing, event-driven architecture, and cloud-based analytics**.
 
 ---
 
+## 🏗️ Architecture
 
-## 🏗️ Architecture Diagram
-
-You upload CSV
+User uploads CSV
       ↓
 S3 Bucket (raw/)
       ↓
-Lambda triggers automatically
+S3 Event Trigger
       ↓
-Python code runs
+AWS Lambda (Python Processing)
       ↓
-┌─────────────────────────────┐
-│  Cleaned CSV  → processed/  │
-│  Summary JSON → summary/    │
-│  Charts HTML  → charts/     │
-└─────────────────────────────┘
+Outputs stored in S3:
+   - processed/ (Cleaned CSV)
+   - summary/ (JSON metrics)
+   - charts/ (HTML charts)
 
-⚙️ Technologies Used
-Amazon S3 – File storage
-AWS Lambda – Serverless processing
-Python – ETL logic
-Plotly – HTML charts
+---
 
-IAM – Permissions
-CloudWatch – Logging
+## 🔐 Key Features
 
-📂 Project Structure
-AmazonLambda/
-│── lambda_function.py
-│── build.ps1
-│── README.md
-│── .gitignore
+- ✅ Fully serverless architecture  
+- ✅ Event-driven processing using S3 triggers  
+- ✅ Automated ETL pipeline  
+- ✅ Data cleaning and transformation  
+- ✅ KPI generation (Revenue, Orders, Average Value)  
+- ✅ Interactive HTML charts using Plotly  
+- ✅ Scalable and cost-efficient  
 
-📥 Input
-Upload CSV file to:
-raw/
-Example CSV
-order_id,customer_name,product,quantity,price,order_date
-1001,Rakesh,Keyboard,2,499,2026-04-01
-1002,Anu,Mouse,1,299,2026-04-02
+---
 
-📤 Output
-Cleaned Data
-processed/cleaned_<filename>.csv
-Summary Metrics
-summary/summary_<filename>.json
-Interactive Charts
-charts/sales_by_product.html
-charts/sales_by_date.html
+## 🛠️ Technologies Used
 
-📊 Features
-Automated ETL pipeline
-Event-driven architecture
-Data cleaning
-KPI calculations
-Interactive HTML charts
-Fully serverless
+- AWS S3 (Storage)
+- AWS Lambda (Compute)
+- Python (Data Processing)
+- Plotly (Visualization)
+- IAM (Access Control)
+- CloudWatch (Logging & Debugging)
 
-🧠 Challenges & Solutions
-❌ Matplotlib / NumPy issue
-Dependencies built on Windows failed in AWS Lambda (Linux environment).
+---
 
-❌ Kaleido issue
-PNG chart generation required heavy dependencies.
+## 📂 Project Workflow
 
-❌ Lambda size limit
-Deployment exceeded 262 MB.
+1. Upload CSV file to `raw/` folder in S3  
+2. S3 triggers Lambda function  
+3. Lambda processes data using Python  
+4. Outputs are generated and stored in S3:
+   - Cleaned data → `processed/`
+   - Summary metrics → `summary/`
+   - Charts → `charts/`  
 
-✅ Final solution
-Switched to Plotly HTML charts:
-Lightweight
-No OS dependency issues
-Interactive
+---
 
-🔐 IAM Permissions Required
-s3:GetObject
-s3:PutObject
-s3:ListBucket
+## 📊 Sample Output
 
-🔮 Future Improvements
-Add SNS notifications
-Use Athena for querying
-Build QuickSight dashboard
-Add alerts
-👨‍💻 Author
+- 📁 `processed/cleaned_file.csv`
+- 📁 `summary/summary.json`
+- 📁 `charts/sales_by_product.html`
+- 📁 `charts/sales_by_date.html`
 
-Rakesh Malle
-Aspiring Data Analyst | AWS | Python | SQL |  AWS
+---
 
-⭐ Project Summary
-This project demonstrates:
-Serverless ETL
-Event-driven AWS design
-Real-world cloud debugging
-Data analytics pipeline
+## 📸 Screenshots (Optional)
+
+![Architecture](architecture.png)
+![Output](output.png)
+
+---
+
+## 📚 What I Learned
+
+- Building serverless ETL pipelines using AWS  
+- Event-driven architecture with S3 and Lambda  
+- Handling AWS Lambda deployment challenges  
+- Debugging IAM permission issues  
+- Solving dependency and package size limits  
+- Generating visualizations in a serverless environment  
+- Git & GitHub workflow for project management  
+
+---
+
+## ⚡ Challenges & Solutions
+
+- ❌ Matplotlib & NumPy compatibility issues (Windows vs Lambda Linux)  
+- ❌ Kaleido dependency caused large package size  
+- ❌ Lambda size limit exceeded (262 MB)  
+
+### ✅ Final Solution
+- Switched to **Plotly HTML charts**
+- Reduced deployment size  
+- Avoided OS compatibility issues  
+- Enabled interactive visualizations  
+
+---
+
+## 🔮 Future Improvements
+
+- Add SNS notifications after processing  
+- Integrate Athena for querying  
+- Build dashboard using QuickSight  
+- Add CloudWatch alerts  
+
+---
+
+## 👨‍💻 Author
+
+**Rakesh Malle**  
+Aspiring Data Analyst | AWS | Python | SQL | AI  
+
+---
+
+## ⭐ If you like this project
+Give it a star ⭐ on GitHub!
