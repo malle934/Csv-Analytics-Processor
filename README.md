@@ -1,10 +1,11 @@
-
+```markdown
 # 🚀 Serverless CSV Analytics Pipeline (AWS)
 
 ## 📌 Overview
 This project is a serverless data pipeline built on AWS that automatically processes CSV files uploaded to Amazon S3. The system cleans the data, calculates key business metrics, and generates interactive HTML charts.
 
 ---
+
 
 ## 🏗️ Architecture Diagram
 
@@ -19,6 +20,8 @@ flowchart TD
 
 
 🏗️ Workflow
+
+```
 You upload CSV
       ↓
 S3 Bucket (raw/)
