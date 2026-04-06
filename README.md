@@ -8,7 +8,7 @@ This project highlights real-world **ETL processing, event-driven architecture, 
 ---
 
 ## 🏗️ Architecture
-
+```
 User uploads CSV
       ↓
 S3 Bucket (raw/)
@@ -21,8 +21,9 @@ Outputs stored in S3:
    - processed/ (Cleaned CSV)
    - summary/ (JSON metrics)
    - charts/ (HTML charts)
-
+```
 ---
+![Sales by Date](OutputFiles/AWSserverlessDiagram.png)
 
 ## 🔐 Key Features
 
@@ -77,8 +78,8 @@ Outputs stored in S3:
 
 ## 📸 Screenshots (Optional)
 
-![Sales by Date](salesbydate.png)
-![Sales by Produvt](salesbyproduct.png)
+![Sales by Date](OutputFiles/salesbydate.png)
+![Sales by Produvt](OutputFiles/salesbyproduct.png)
 
 ---
 
