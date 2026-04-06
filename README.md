@@ -1,3 +1,4 @@
+
 # 🚀 Serverless CSV Analytics Pipeline (AWS)
 
 ## 📌 Overview
@@ -5,10 +6,7 @@ This project is a serverless data pipeline built on AWS that automatically proce
 
 ---
 
-
 ## 🏗️ Architecture Diagram
-
-## Architecture Diagram
 
 ```mermaid
 flowchart TD
@@ -18,6 +16,7 @@ flowchart TD
     D --> E[Processed CSV]
     D --> F[Summary JSON]
     D --> G[HTML Charts]
+
 
 🏗️ Workflow
 You upload CSV
