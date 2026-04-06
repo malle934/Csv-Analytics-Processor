@@ -1,4 +1,4 @@
-```markdown
+
 # 🚀 Serverless CSV Analytics Pipeline (AWS)
 
 ## 📌 Overview
@@ -9,19 +9,6 @@ This project is a serverless data pipeline built on AWS that automatically proce
 
 ## 🏗️ Architecture Diagram
 
-```mermaid
-flowchart TD
-    A[Upload CSV] --> B[S3 Bucket raw]
-    B --> C[Lambda Trigger]
-    C --> D[Python Processing]
-    D --> E[Processed CSV]
-    D --> F[Summary JSON]
-    D --> G[HTML Charts]
-
-
-🏗️ Workflow
-
-```
 You upload CSV
       ↓
 S3 Bucket (raw/)
