@@ -7,15 +7,17 @@ This project is a serverless data pipeline built on AWS that automatically proce
 
 ## 🏗️ Architecture Diagram
 
+## 🏗️ Architecture Diagram
+
 ```mermaid
 flowchart TD
-    A[Upload CSV] --> B[S3 Bucket raw/]
-    B --> C[Trigger Lambda]
+    A[Upload CSV] --> B[S3 Bucket raw]
+    B --> C[Lambda Trigger]
     C --> D[Python Processing]
 
-    D --> E[Cleaned CSV<br/>processed/]
-    D --> F[Summary JSON<br/>summary/]
-    D --> G[Charts HTML<br/>charts/]
+    D --> E[Processed CSV]
+    D --> F[Summary JSON]
+    D --> G[HTML Charts]
 
 🏗️ Workflow
 You upload CSV
@@ -31,13 +33,16 @@ Python code runs
 │  Summary JSON → summary/    │
 │  Charts HTML  → charts/     │
 └─────────────────────────────┘
+
 ⚙️ Technologies Used
 Amazon S3 – File storage
 AWS Lambda – Serverless processing
 Python – ETL logic
 Plotly – HTML charts
+
 IAM – Permissions
 CloudWatch – Logging
+
 📂 Project Structure
 AmazonLambda/
 │── lambda_function.py
@@ -46,9 +51,7 @@ AmazonLambda/
 │── .gitignore
 
 📥 Input
-
 Upload CSV file to:
-
 raw/
 Example CSV
 order_id,customer_name,product,quantity,price,order_date
@@ -74,15 +77,12 @@ Fully serverless
 
 🧠 Challenges & Solutions
 ❌ Matplotlib / NumPy issue
-
 Dependencies built on Windows failed in AWS Lambda (Linux environment).
 
 ❌ Kaleido issue
-
 PNG chart generation required heavy dependencies.
 
 ❌ Lambda size limit
-
 Deployment exceeded 262 MB.
 
 ✅ Final solution
