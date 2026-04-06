@@ -20,4 +20,4 @@ Copy-Item lambda_function.py package/
 Write-Host "Zipping..."
 Compress-Archive -Path .\package\* -DestinationPath .\deployment.zip
 
-Write-Host "Done! Upload deployment.zip to Lambda."
+Write-Host "Done! "

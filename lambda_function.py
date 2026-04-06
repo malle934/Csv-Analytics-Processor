@@ -8,7 +8,6 @@ import plotly.graph_objects as go
 
 s3 = boto3.client("s3")
 
-
 def generate_charts(sales_by_product, sales_by_date, bucket_name):
     products = list(sales_by_product.keys())
     product_sales = list(sales_by_product.values())
@@ -22,7 +21,10 @@ def generate_charts(sales_by_product, sales_by_date, bucket_name):
         height=500
     )
     product_chart_path = "/tmp/sales_by_product.html"
-    fig1.write_html(product_chart_path)
+
+    # Write as CDN - no embedded plotly.js
+    with open(product_chart_path, "w") as f:
+        f.write(fig1.to_html(full_html=True, include_plotlyjs="cdn"))
 
     dates = sorted(sales_by_date.keys())
     date_sales = [sales_by_date[date] for date in dates]
@@ -36,13 +38,15 @@ def generate_charts(sales_by_product, sales_by_date, bucket_name):
         height=500
     )
     date_chart_path = "/tmp/sales_by_date.html"
-    fig2.write_html(date_chart_path)
+
+    # Write as CDN - no embedded plotly.js
+    with open(date_chart_path, "w") as f:
+        f.write(fig2.to_html(full_html=True, include_plotlyjs="cdn"))
 
     s3.upload_file(product_chart_path, bucket_name, "charts/sales_by_product.html",
                    ExtraArgs={"ContentType": "text/html"})
     s3.upload_file(date_chart_path, bucket_name, "charts/sales_by_date.html",
                    ExtraArgs={"ContentType": "text/html"})
-
 
 def lambda_handler(event, context):
     try:
