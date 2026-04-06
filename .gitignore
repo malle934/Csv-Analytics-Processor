@@ -1,0 +1,23 @@
+# Lambda build artifacts
+package/
+deployment.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.env
+venv/
+.venv/
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
