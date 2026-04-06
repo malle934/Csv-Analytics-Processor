@@ -40,6 +40,13 @@ Outputs stored in S3:
 
 - AWS S3 (Storage)
 - AWS Lambda (Compute)
+- ### ⚙️ Lambda Configuration
+| Setting | Value |
+|---|---|
+| Runtime | Python 3.12 |
+| Timeout | 2 minutes |
+| Memory | 1024 MB |
+| Trigger | S3 Event (raw/) |
 - Python (Data Processing)
 - Plotly (Visualization)
 - IAM (Access Control)
